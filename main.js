@@ -1,27 +1,55 @@
-function formattedPhone(phone) {
-    // проверяем что ввел пользователь
-    if (phone === '' || phone.length !== 12 || phone.charAt(0) !== '+') {
-        return 'Формат ввода неправильный'
-    }
-
-    // если формат введенного номера соответсвует заданным параметрам
-    // функция начнет форматирование
-    let formatted = ""; // переменная для записи отформатированного телефона
-    for (let i = 0; i < phone.length; i++) { // цикл форматирования
-        if (i === 2) {
-            formatted = formatted + ' (' + phone.charAt(i);
-        } else if (i === 5) {
-            formatted = formatted + ') ' + phone.charAt(i);
-        } else if (i === 8 || i === 10){
-            formatted = formatted + ' ' + phone.charAt(i);
-        }else {
-            formatted = formatted + phone.charAt(i);
-        }
-    }
-    return formatted; // возвращаем результат
+const $btn = document.getElementById('btn-kick');
+const character = {
+    name: 'Pikachu',
+    defaultHp: 100,
+    damageHp: 100,
+    elHp: document.getElementById('health-character'),
+    elProgressbar: document.getElementById('progressbar-character'),
 }
-// узнаем у пользователя номер
-let phone = prompt('Введите номер телефона:', '+71234567890');
 
-// выводим результат
-alert(formattedPhone(phone));
+const enemy = {
+    name: 'Charmander',
+    defaultHp: 100,
+    damageHp: 100,
+    elHp: document.getElementById('health-enemy'),
+    elProgressbar: document.getElementById('progressbar-enemy'),
+}
+
+$btn.addEventListener('click', function(){
+    changeHp(random(20), character);
+    changeHp(random(20), enemy);
+});
+
+function init() {
+    renderHp(character);
+    renderHp(enemy);
+}
+
+function renderHp(person) {
+    renderHpLife(person);
+    renderProgressbarHp(person);
+}
+
+function renderHpLife(person) {
+    person.elHp.innerText = person.damageHp + '/'+ person.defaultHp;
+}
+
+function renderProgressbarHp(person) {
+    person.elProgressbar.style.width = person.damageHp + '%';
+}
+
+function changeHp(count, person) {
+    if (person.damageHp < count) {
+        person.damageHp = 0;
+        alert('Бедный '+person.name + ' проиграл бой!');
+        $btn.disabled = true;
+    } else {
+        person.damageHp -= count;
+
+    }
+    renderHp(person);
+}
+
+function random(num) {
+    return Math.ceil(Math.random() * num);
+}

@@ -1,53 +1,52 @@
 const $btn = document.getElementById('btn-kick');
 const character = {
     name: 'Pikachu',
-    defaultHp: 100,
-    damageHp: 100,
+    defaultHp: 200,
+    damageHp: 200,
     elHp: document.getElementById('health-character'),
     elProgressbar: document.getElementById('progressbar-character'),
+    changeHp: changeHp,
 }
 
 const enemy = {
     name: 'Charmander',
-    defaultHp: 100,
-    damageHp: 100,
+    defaultHp: 200,
+    damageHp: 200,
     elHp: document.getElementById('health-enemy'),
     elProgressbar: document.getElementById('progressbar-enemy'),
+    changeHp: changeHp,
 }
 
 $btn.addEventListener('click', function(){
-    changeHp(random(20), character);
-    changeHp(random(20), enemy);
+    character.changeHp(random(20));
+    enemy.changeHp(random(20));
 });
 
-function init() {
-    renderHp(character);
-    renderHp(enemy);
+function renderHp(persone) {
+    renderHpLife(persone);
+    renderProgressbarHp(persone);
 }
 
-function renderHp(person) {
-    renderHpLife(person);
-    renderProgressbarHp(person);
+function renderHpLife(persone) {
+    persone.elHp.innerText = persone.damageHp + '/'+ persone.defaultHp;
 }
 
-function renderHpLife(person) {
-    person.elHp.innerText = person.damageHp + '/'+ person.defaultHp;
+function renderProgressbarHp(persone) {
+    let oneProcent = persone.defaultHp / 100;
+    let widthProgressbar = persone.damageHp / oneProcent;
+    persone.elProgressbar.style.width = widthProgressbar + '%';
 }
 
-function renderProgressbarHp(person) {
-    person.elProgressbar.style.width = person.damageHp + '%';
-}
-
-function changeHp(count, person) {
-    if (person.damageHp < count) {
-        person.damageHp = 0;
-        alert('Бедный '+person.name + ' проиграл бой!');
+function changeHp(count) {
+    if (this.damageHp < count) {
+        this.damageHp = 0;
+        alert('Бедный '+this.name + ' проиграл бой!');
         $btn.disabled = true;
     } else {
-        person.damageHp -= count;
+        this.damageHp -= count;
 
     }
-    renderHp(person);
+    renderHp(this);
 }
 
 function random(num) {

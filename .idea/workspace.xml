@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e9c2e2aa-712c-44a5-b32c-9202482818da" name="Default" comment="">
+    <list default="true" id="5e3c1f7b-8622-42bd-8fe4-4952eabf3ce8" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change beforePath="$PROJECT_DIR$/main.js" afterPath="$PROJECT_DIR$/main.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,41 +16,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="912">
-              <caret line="38" column="39" lean-forward="false" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="47" />
+            <state relative-caret-position="432">
+              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/main.js">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="40" column="33" lean-forward="false" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
-              <folding>
-                <element signature="e#68#255#0" expanded="false" />
-                <element signature="e#271#453#0" expanded="false" />
-                <element signature="n#!!block;n#init#0" expanded="false" />
-                <element signature="n#!!block;n#renderHp#0" expanded="false" />
-                <element signature="n#!!block;n#renderHpLife#0" expanded="false" />
-                <element signature="n#!!block;n#renderProgressbarHp#0" expanded="false" />
-                <element signature="n#!!block;n#changeHp#0" expanded="false" />
-                <element signature="n#!!block;n#random#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="604">
+              <caret line="56" column="66" lean-forward="false" selection-start-line="56" selection-start-column="66" selection-end-line="56" selection-end-column="66" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>btn</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -55,9 +44,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/main.html" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/main.js" />
       </list>
     </option>
@@ -72,9 +59,6 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="1440" />
     <option name="height" value="900" />
-  </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -91,8 +75,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -104,11 +86,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -130,25 +114,23 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e9c2e2aa-712c-44a5-b32c-9202482818da" name="Default" comment="" />
-      <created>1597776124828</created>
+      <changelist id="5e3c1f7b-8622-42bd-8fe4-4952eabf3ce8" name="Default" comment="" />
+      <created>1598367703451</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1597776124828</updated>
-      <workItem from="1597776126139" duration="5800000" />
-      <workItem from="1597868003620" duration="3521000" />
-      <workItem from="1598145922815" duration="3669000" />
-      <workItem from="1598365403368" duration="1879000" />
+      <updated>1598367703451</updated>
+      <workItem from="1598367704653" duration="973000" />
+      <workItem from="1598368679010" duration="3438000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14869000" />
+    <option name="totallyTimeSpent" value="4411000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1302589" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2540453" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -179,35 +161,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="912">
-          <caret line="38" column="39" lean-forward="false" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="40" column="33" lean-forward="false" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
-          <folding>
-            <element signature="e#68#255#0" expanded="false" />
-            <element signature="e#271#453#0" expanded="false" />
-            <element signature="n#!!block;n#init#0" expanded="false" />
-            <element signature="n#!!block;n#renderHp#0" expanded="false" />
-            <element signature="n#!!block;n#renderHpLife#0" expanded="false" />
-            <element signature="n#!!block;n#renderProgressbarHp#0" expanded="false" />
-            <element signature="n#!!block;n#changeHp#0" expanded="false" />
-            <element signature="n#!!block;n#random#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" column="25" lean-forward="false" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -216,95 +173,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="40" lean-forward="true" selection-start-line="0" selection-start-column="40" selection-end-line="0" selection-end-column="40" />
-          <folding>
-            <element signature="e#68#255#0" expanded="false" />
-            <element signature="e#271#453#0" expanded="false" />
-            <element signature="n#!!block;n#init#0" expanded="false" />
-            <element signature="n#!!block;n#renderHp#0" expanded="false" />
-            <element signature="n#!!block;n#renderHpLife#0" expanded="false" />
-            <element signature="n#!!block;n#renderProgressbarHp#0" expanded="false" />
-            <element signature="n#!!block;n#changeHp#0" expanded="false" />
-            <element signature="n#!!block;n#random#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
-          <folding>
-            <element signature="e#68#255#0" expanded="false" />
-            <element signature="e#271#453#0" expanded="false" />
-            <element signature="n#!!block;n#init#0" expanded="false" />
-            <element signature="n#!!block;n#renderHp#0" expanded="false" />
-            <element signature="n#!!block;n#renderHpLife#0" expanded="false" />
-            <element signature="n#!!block;n#renderProgressbarHp#0" expanded="false" />
-            <element signature="n#!!block;n#changeHp#0" expanded="false" />
-            <element signature="n#!!block;n#random#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore" />
-    <entry file="file://$PROJECT_DIR$/assets/pockeball.svg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/Pokemon_logo.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/SkyDay.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/Parkscene_Background.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/card.svg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10717">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="912">
-          <caret line="38" column="39" lean-forward="false" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="47" />
+        <state relative-caret-position="604">
+          <caret line="56" column="66" lean-forward="false" selection-start-line="56" selection-start-column="66" selection-end-line="56" selection-end-column="66" />
           <folding />
         </state>
       </provider>
@@ -312,17 +188,8 @@
     <entry file="file://$PROJECT_DIR$/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
-          <caret line="40" column="33" lean-forward="false" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
-          <folding>
-            <element signature="e#68#255#0" expanded="false" />
-            <element signature="e#271#453#0" expanded="false" />
-            <element signature="n#!!block;n#init#0" expanded="false" />
-            <element signature="n#!!block;n#renderHp#0" expanded="false" />
-            <element signature="n#!!block;n#renderHpLife#0" expanded="false" />
-            <element signature="n#!!block;n#renderProgressbarHp#0" expanded="false" />
-            <element signature="n#!!block;n#changeHp#0" expanded="false" />
-            <element signature="n#!!block;n#random#0" expanded="false" />
-          </folding>
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

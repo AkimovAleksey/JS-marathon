@@ -6,6 +6,9 @@ const character = {
     elHp: document.getElementById('health-character'),
     elProgressbar: document.getElementById('progressbar-character'),
     changeHp: changeHp,
+    renderHp: renderHp,
+    renderHpLife: renderHpLife,
+    renderProgressbarHp: renderProgressbarHp,
 }
 
 const enemy = {
@@ -15,6 +18,9 @@ const enemy = {
     elHp: document.getElementById('health-enemy'),
     elProgressbar: document.getElementById('progressbar-enemy'),
     changeHp: changeHp,
+    renderHp: renderHp,
+    renderHpLife: renderHpLife,
+    renderProgressbarHp: renderProgressbarHp,
 }
 
 $btn.addEventListener('click', function(){
@@ -22,31 +28,31 @@ $btn.addEventListener('click', function(){
     enemy.changeHp(random(20));
 });
 
-function renderHp(persone) {
-    renderHpLife(persone);
-    renderProgressbarHp(persone);
+function renderHp() {
+    this.renderHpLife();
+    this.renderProgressbarHp();
 }
 
-function renderHpLife(persone) {
-    persone.elHp.innerText = persone.damageHp + '/'+ persone.defaultHp;
+function renderHpLife() {
+    this.elHp.innerText = this.damageHp + '/'+ this.defaultHp;
 }
 
-function renderProgressbarHp(persone) {
-    let oneProcent = persone.defaultHp / 100;
-    let widthProgressbar = persone.damageHp / oneProcent;
-    persone.elProgressbar.style.width = widthProgressbar + '%';
+function renderProgressbarHp() {
+    let oneProtsent = this.defaultHp / 100;
+    let widthProgressbar = this.damageHp / oneProtsent;
+    this.elProgressbar.style.width = widthProgressbar + '%';
 }
 
 function changeHp(count) {
-    if (this.damageHp < count) {
+    this.damageHp -= count;
+
+    if (this.damageHp <= 0) {
         this.damageHp = 0;
         alert('Бедный '+this.name + ' проиграл бой!');
         $btn.disabled = true;
-    } else {
-        this.damageHp -= count;
-
     }
-    renderHp(this);
+
+    this.renderHp();
 }
 
 function random(num) {

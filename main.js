@@ -1,53 +1,58 @@
 const $btn = document.getElementById('btn-kick');
 const character = {
     name: 'Pikachu',
-    defaultHp: 100,
-    damageHp: 100,
+    defaultHp: 200,
+    damageHp: 200,
     elHp: document.getElementById('health-character'),
     elProgressbar: document.getElementById('progressbar-character'),
+    changeHp: changeHp,
+    renderHp: renderHp,
+    renderHpLife: renderHpLife,
+    renderProgressbarHp: renderProgressbarHp,
 }
 
 const enemy = {
     name: 'Charmander',
-    defaultHp: 100,
-    damageHp: 100,
+    defaultHp: 200,
+    damageHp: 200,
     elHp: document.getElementById('health-enemy'),
     elProgressbar: document.getElementById('progressbar-enemy'),
+    changeHp: changeHp,
+    renderHp: renderHp,
+    renderHpLife: renderHpLife,
+    renderProgressbarHp: renderProgressbarHp,
 }
 
 $btn.addEventListener('click', function(){
-    changeHp(random(20), character);
-    changeHp(random(20), enemy);
+    character.changeHp(random(20));
+    enemy.changeHp(random(20));
 });
 
-function init() {
-    renderHp(character);
-    renderHp(enemy);
+function renderHp() {
+    this.renderHpLife();
+    this.renderProgressbarHp();
 }
 
-function renderHp(person) {
-    renderHpLife(person);
-    renderProgressbarHp(person);
+function renderHpLife() {
+    this.elHp.innerText = this.damageHp + '/'+ this.defaultHp;
 }
 
-function renderHpLife(person) {
-    person.elHp.innerText = person.damageHp + '/'+ person.defaultHp;
+function renderProgressbarHp() {
+    let oneProtsent = this.defaultHp / 100;
+    let widthProgressbar = this.damageHp / oneProtsent;
+    this.elProgressbar.style.width = widthProgressbar + '%';
 }
 
-function renderProgressbarHp(person) {
-    person.elProgressbar.style.width = person.damageHp + '%';
-}
+function changeHp(count) {
+    this.damageHp -= count;
 
-function changeHp(count, person) {
-    if (person.damageHp < count) {
-        person.damageHp = 0;
-        alert('Бедный '+person.name + ' проиграл бой!');
+    if (this.damageHp <= 0) {
+        this.damageHp = 0;
+        alert('Бедный '+this.name + ' проиграл бой!');
         $btn.disabled = true;
-    } else {
-        person.damageHp -= count;
-
     }
-    renderHp(person);
+
+    this.renderHp();
 }
 
 function random(num) {

@@ -1,4 +1,7 @@
 const $btn = document.getElementById('btn-kick');
+const $btn2 = document.getElementById('btn-kick2');
+const $btn3 = document.getElementById('btn-kick3');
+const $logs = document.querySelector('.logFight');
 const character = {
     name: 'Pikachu',
     defaultHp: 200,
@@ -25,19 +28,28 @@ const enemy = {
     logFight: logFight,
 }
 
-const $logs = document.querySelector('.logFight');
-const count = countBtn();
+// const buttons = document.querySelectorAll('button');
 
-const buttons = document.querySelectorAll('button');
-
-buttons.forEach(function (button) {
-    button.onclick = function(e) {
-        count();
-        character.changeHp(random(20));
-        enemy.changeHp(random(20));
-    }
+$btn.addEventListener("click", function () {
+    const count = countBtn($btn);
+    count();
+    character.changeHp(random(20));
+    enemy.changeHp(random(20));
 })
 
+$btn2.addEventListener("click", function () {
+    const count = countBtn($btn2);
+    count();
+    character.changeHp(random(30) + 10);
+    enemy.changeHp(random(30) + 10);
+})
+
+$btn3.addEventListener("click", function () {
+    const count = countBtn($btn3);
+    count();
+    character.changeHp(random(20) + 5);
+    enemy.changeHp(random(20) + 5);
+})
 
 function renderHp() {
     this.renderHpLife();
@@ -68,6 +80,8 @@ function changeHp(count) {
         $logs.insertBefore($p, $logs.children[0]);
         // alert('Бедный '+this.name + ' проиграл бой!');
         $btn.disabled = true;
+        $btn2.disabled = true;
+        $btn3.disabled = true;
         this.renderHp();
         return breack;
     }
@@ -111,11 +125,13 @@ function generateLog(firstPerson, secondPerson, count, damageHp, defaultHp) {
 function countBtn(e) {
     let countClick = +e.querySelector("span").innerHTML;
     const $span = e.querySelector("span");
+    if (countClick == 1) {
+        e.disabled = true;
+    }
     return function () {
-        countClick += 1;
+        countClick -= 1;
         $span.innerText = countClick;
-        console.log(countClick);
+
     }
 
 }
-console.log($btn.querySelector('span').innerText);

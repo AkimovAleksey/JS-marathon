@@ -26,13 +26,18 @@ const enemy = {
 }
 
 const $logs = document.querySelector('.logFight');
+const count = countBtn();
 
+const buttons = document.querySelectorAll('button');
 
+buttons.forEach(function (button) {
+    button.onclick = function(e) {
+        count();
+        character.changeHp(random(20));
+        enemy.changeHp(random(20));
+    }
+})
 
-$btn.addEventListener('click', function(){
-    character.changeHp(random(20));
-    enemy.changeHp(random(20));
-});
 
 function renderHp() {
     this.renderHpLife();
@@ -57,8 +62,14 @@ function changeHp(count) {
 
     if (this.damageHp <= 0) {
         this.damageHp = 0;
-        alert('Бедный '+this.name + ' проиграл бой!');
+
+        const $p = document.createElement('p');
+        $p.innerText = ('Бедный '+this.name + ' проиграл бой!');
+        $logs.insertBefore($p, $logs.children[0]);
+        // alert('Бедный '+this.name + ' проиграл бой!');
         $btn.disabled = true;
+        this.renderHp();
+        return breack;
     }
 
     this.renderHp();
@@ -80,10 +91,6 @@ function logFight(count){
 
 }
 
-
-
-
-
 function generateLog(firstPerson, secondPerson, count, damageHp, defaultHp) {
     const logs = [
         `${firstPerson} вспомнил что-то важное, но неожиданно ${secondPerson}, не помня себя от испуга, ударил в предплечье врага. -${count}, [${damageHp}/${defaultHp}]`,
@@ -100,3 +107,15 @@ function generateLog(firstPerson, secondPerson, count, damageHp, defaultHp) {
 
     return logs[random(logs.length) - 1];
 }
+
+function countBtn(e) {
+    let countClick = +e.querySelector("span").innerHTML;
+    const $span = e.querySelector("span");
+    return function () {
+        countClick += 1;
+        $span.innerText = countClick;
+        console.log(countClick);
+    }
+
+}
+console.log($btn.querySelector('span').innerText);

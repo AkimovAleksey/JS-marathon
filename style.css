@@ -301,6 +301,18 @@ body {
     box-shadow: 0 0 5px 2px white, 0 0 15px #ffe9c1, 0 3px 5px -2px rgba(0, 0, 0, 0.2);
 }
 
+.kick-span {
+    font-size: small;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+}
+
+.logFight {
+    max-height: 18em;
+    overflow: hidden;
+}
+
 .candy {
     display: block;
     position: absolute;

@@ -61,6 +61,7 @@
       <workItem from="1598737986013" duration="515000" />
       <workItem from="1598738659304" duration="3183000" />
       <workItem from="1598808319262" duration="11715000" />
+      <workItem from="1599018942133" duration="491000" />
     </task>
     <servers />
   </component>
@@ -77,6 +78,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="141" y="123" key="SettingsEditor" timestamp="1598738745048">
@@ -90,7 +92,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/main.js</url>
           <line>53</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

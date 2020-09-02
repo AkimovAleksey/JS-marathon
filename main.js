@@ -28,28 +28,35 @@ const enemy = {
     logFight: logFight,
 }
 
-// const buttons = document.querySelectorAll('button');
-
-$btn.addEventListener("click", function () {
-    const count = countBtn($btn);
-    count();
+const buttons = document.querySelectorAll('button');
+buttons.forEach(function (button) {
+    button.click = (
+    let ccount = countBtn(button);
+    ccount();
     character.changeHp(random(20));
     enemy.changeHp(random(20));
+    )
 })
-
-$btn2.addEventListener("click", function () {
-    const count = countBtn($btn2);
-    count();
-    character.changeHp(random(30) + 10);
-    enemy.changeHp(random(30) + 10);
-})
-
-$btn3.addEventListener("click", function () {
-    const count = countBtn($btn3);
-    count();
-    character.changeHp(random(20) + 5);
-    enemy.changeHp(random(20) + 5);
-})
+// $btn.addEventListener("click", function () {
+//     const count = countBtn($btn);
+//     count();
+//     character.changeHp(random(20));
+//     enemy.changeHp(random(20));
+// })
+//
+// $btn2.addEventListener("click", function () {
+//     const count = countBtn($btn2);
+//     count();
+//     character.changeHp(random(30) + 10);
+//     enemy.changeHp(random(30) + 10);
+// })
+//
+// $btn3.addEventListener("click", function () {
+//     const count = countBtn($btn3);
+//     count();
+//     character.changeHp(random(20) + 5);
+//     enemy.changeHp(random(20) + 5);
+// })
 
 function renderHp() {
     this.renderHpLife();

@@ -20,8 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5e3c1f7b-8622-42bd-8fe4-4952eabf3ce8" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +62,7 @@
       <workItem from="1598738659304" duration="3183000" />
       <workItem from="1598808319262" duration="11715000" />
       <workItem from="1599018942133" duration="491000" />
+      <workItem from="1599020178137" duration="1048000" />
     </task>
     <servers />
   </component>
@@ -85,6 +86,10 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="141" y="123" key="SettingsEditor/0.0.1280.984/1280.0.1440.900@0.0.1280.984" timestamp="1598738745048" />
+    <state x="296" y="221" key="run.anything.popup" timestamp="1599023654837">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="296" y="221" key="run.anything.popup/0.0.1280.984/1280.0.1440.900@0.0.1280.984" timestamp="1599023654837" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

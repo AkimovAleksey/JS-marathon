@@ -1,4 +1,7 @@
 const $btn = document.getElementById('btn-kick');
+const $btn2 = document.getElementById('btn-kick2');
+const $btn3 = document.getElementById('btn-kick3');
+const $logs = document.querySelector('.logFight');
 const character = {
     name: 'Pikachu',
     defaultHp: 200,
@@ -25,14 +28,28 @@ const enemy = {
     logFight: logFight,
 }
 
-const $logs = document.querySelector('.logFight');
+// const buttons = document.querySelectorAll('button');
 
-
-
-$btn.addEventListener('click', function(){
+$btn.addEventListener("click", function () {
+    const count = countBtn($btn);
+    count();
     character.changeHp(random(20));
     enemy.changeHp(random(20));
-});
+})
+
+$btn2.addEventListener("click", function () {
+    const count = countBtn($btn2);
+    count();
+    character.changeHp(random(30) + 10);
+    enemy.changeHp(random(30) + 10);
+})
+
+$btn3.addEventListener("click", function () {
+    const count = countBtn($btn3);
+    count();
+    character.changeHp(random(20) + 5);
+    enemy.changeHp(random(20) + 5);
+})
 
 function renderHp() {
     this.renderHpLife();
@@ -57,8 +74,16 @@ function changeHp(count) {
 
     if (this.damageHp <= 0) {
         this.damageHp = 0;
-        alert('Бедный '+this.name + ' проиграл бой!');
+
+        const $p = document.createElement('p');
+        $p.innerText = ('Бедный '+this.name + ' проиграл бой!');
+        $logs.insertBefore($p, $logs.children[0]);
+        // alert('Бедный '+this.name + ' проиграл бой!');
         $btn.disabled = true;
+        $btn2.disabled = true;
+        $btn3.disabled = true;
+        this.renderHp();
+        return breack;
     }
 
     this.renderHp();
@@ -80,10 +105,6 @@ function logFight(count){
 
 }
 
-
-
-
-
 function generateLog(firstPerson, secondPerson, count, damageHp, defaultHp) {
     const logs = [
         `${firstPerson} вспомнил что-то важное, но неожиданно ${secondPerson}, не помня себя от испуга, ударил в предплечье врага. -${count}, [${damageHp}/${defaultHp}]`,
@@ -99,4 +120,18 @@ function generateLog(firstPerson, secondPerson, count, damageHp, defaultHp) {
     ];
 
     return logs[random(logs.length) - 1];
+}
+
+function countBtn(e) {
+    let countClick = +e.querySelector("span").innerHTML;
+    const $span = e.querySelector("span");
+    if (countClick == 1) {
+        e.disabled = true;
+    }
+    return function () {
+        countClick -= 1;
+        $span.innerText = countClick;
+
+    }
+
 }

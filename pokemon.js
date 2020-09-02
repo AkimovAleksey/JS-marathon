@@ -51,7 +51,7 @@ class Pokemon extends Selectors {
         }
 
         this.renderHp();
-        cb && cb(count);
+        cb(count);
     }
 
 

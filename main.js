@@ -1,4 +1,5 @@
 import Pokemon from "./pokemon.js";
+import {random} from "./random.js";
 
 
 const player1 = new Pokemon({
@@ -25,10 +26,10 @@ const $logs = document.querySelector('.logFight');
 $btn.addEventListener("click", function () {
     const count = countBtn($btn);
     count();
-    player1.changeHp(random(20), function (count) {
+    player1.changeHp(random(0, 20), function (count) {
         logFight(count);
     });
-    player2.changeHp(random(20), function (count) {
+    player2.changeHp(random(0, 20), function (count) {
         logFight(count);
     });
 })
@@ -36,10 +37,10 @@ $btn.addEventListener("click", function () {
 $btn2.addEventListener("click", function () {
     const count = countBtn($btn2);
     count();
-    player1.changeHp(random(30) + 10, function (count) {
+    player1.changeHp(random(10, 30), function (count) {
         logFight(count);
     });
-    player2.changeHp(random(30) + 10, function (count) {
+    player2.changeHp(random(10, 30), function (count) {
         logFight(count);
     });
 })
@@ -47,28 +48,26 @@ $btn2.addEventListener("click", function () {
 $btn3.addEventListener("click", function () {
     const count = countBtn($btn3);
     count();
-    player1.changeHp(random(20) + 5, function (count) {
+    player1.changeHp(random(20, 60), function (count) {
         logFight(count);
     });
-    player2.changeHp(random(20) + 5, function (count) {
+    player2.changeHp(random(20, 60), function (count) {
         logFight(count);
     });
 })
 
 
-function random(num) {
-    return Math.ceil(Math.random() * num);
-}
 
 function logFight(count){
-    const {name: nameEnemy, total: defaultHpEnemy, current: damageHpEnemy} = player2;
-    const {name: nameCharacter, total: defaultHpCharacter, current: damageHpCharacter} = player1;
+    const {name: nameEnemy, } = player2;
+    const {name: nameCharacter, } = player1;
 
     const log = this === player2 ? generateLog(nameEnemy, nameCharacter, count, player2.hp.current, player2.hp.total) :
         generateLog(nameCharacter, nameEnemy, count, player1.hp.current, player1.hp.total);
     const $p = document.createElement('p');
     $p.innerText = log;
     $logs.insertBefore($p, $logs.children[0]);
+
 
 }
 
@@ -86,7 +85,7 @@ function generateLog(firstPerson, secondPerson, count, damageHp, defaultHp) {
         `${firstPerson} пытался что-то сказать, но вдруг, неожиданно ${secondPerson} со скуки, разбил бровь сопернику. -${count}, [${damageHp}/${defaultHp}]`
     ];
 
-    return logs[random(logs.length) - 1];
+    return logs[random(1, logs.length) - 1];
 }
 
 function countBtn(e) {
@@ -102,3 +101,4 @@ function countBtn(e) {
     }
 
 }
+

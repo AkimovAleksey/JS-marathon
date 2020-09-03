@@ -5,7 +5,7 @@ class Selectors {
     }
 }
 class Pokemon extends Selectors {
-    constructor({ name, hp, type, selectors}) {
+    constructor({ name, hp, type, selectors, attacks = [] }) {
         // noinspection JSAnnotator
         super(selectors);
 
@@ -15,6 +15,7 @@ class Pokemon extends Selectors {
             total: hp,
         };
         this.type = type;
+        this.attacks = attacks;
 
         this.renderHp();
     }

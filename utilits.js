@@ -8,18 +8,16 @@ function random(min, max) {
 }
 
 
-function logFight(count){
-    const {name: nameCharacter, } = player1;
-    const {name: nameEnemy, } = player2;
-    // const {name: nameCharacter, } = player1;
+function logFight(player, count){
+    const {name: nameCharacter} = player1;
+    const {name: nameEnemy} = player2;
 
-    const log = this === player2 ? generateLog(nameEnemy, nameCharacter, count, player2.hp.current, player2.hp.total) :
+    const log = player === player2 ? generateLog(nameEnemy, nameCharacter, count, player2.hp.current, player2.hp.total) :
         generateLog(nameCharacter, nameEnemy, count, player1.hp.current, player1.hp.total);
+
     const $p = document.createElement('p');
     $p.innerText = log;
     $logs.insertBefore($p, $logs.children[0]);
-
-
 }
 
 function generateLog(firstPerson, secondPerson, count, damageHp, defaultHp) {
@@ -44,13 +42,13 @@ function countBtn(count, e) {
     let countClick = count;
     $span.innerText = countClick;
 
-    if (countClick == 1) {
-        e.disabled = true;
-    }
+
     return function () {
         countClick -= 1;
         $span.innerText = countClick;
-
+        if (countClick <= 0) {
+            e.disabled = true;
+        }
     }
 
 }

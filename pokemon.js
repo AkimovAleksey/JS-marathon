@@ -2,23 +2,28 @@ class Selectors {
     constructor(name) {
         this.elHp = document.getElementById(`health-${name}`);
         this.elProgressbar = document.getElementById(`progressbar-${name}`);
+        this.elImg = document.getElementById(`img-${name}`);
+        this.elName = document.getElementById(`name-${name}`);
     }
 }
 class Pokemon extends Selectors {
-    constructor({ name, hp, type, selectors, attacks = [] }) {
+    constructor({ id, name, hp, type, selectors, img, attacks = [] }) {
         // noinspection JSAnnotator
         super(selectors);
 
+        this.id = id;
         this.name = name;
         this.hp = {
             total: hp,
             current: hp,
 
         };
+        this.img = img;
         this.type = type;
         this.attacks = attacks;
 
         this.renderHp();
+        this.paddingPokemon()
     }
     renderHp = () => {
         this.renderHpLife();
@@ -76,6 +81,12 @@ class Pokemon extends Selectors {
             cb && cb(count);
 
     };
+
+    paddingPokemon = () => {
+        const {elImg, elName} = this;
+        elImg.src = this.img;
+        elName.innerText = this.name;
+    }
 
 }
 

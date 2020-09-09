@@ -5,16 +5,18 @@ class Selectors {
     }
 }
 class Pokemon extends Selectors {
-    constructor({ name, hp, type, selectors}) {
+    constructor({ name, hp, type, selectors, attacks = [] }) {
         // noinspection JSAnnotator
         super(selectors);
 
         this.name = name;
         this.hp = {
-            current: hp,
             total: hp,
+            current: hp,
+
         };
         this.type = type;
+        this.attacks = attacks;
 
         this.renderHp();
     }
@@ -29,12 +31,12 @@ class Pokemon extends Selectors {
     }
 
     renderProgressbarHp = () => {
-        let oneProtsent = this.total / 100;
-        let widthProgressbar = this.current / oneProtsent;
+        let oneProtsent = this.hp.total / 100;
+        let widthProgressbar = this.hp.current / oneProtsent;
         this.elProgressbar.style.width = widthProgressbar + '%';
     }
 
-    changeHp = (count, cb) => {
+    changeHp = (e, count, cb) => {
         this.hp.current -= count;
 
         if (this.hp.current <= 0) {
@@ -42,18 +44,38 @@ class Pokemon extends Selectors {
 
             const $p = document.createElement('p');
             $p.innerText = ('Бедный '+this.name + ' проиграл бой!');
+            const $logs = document.querySelector('.logFight');
             $logs.insertBefore($p, $logs.children[0]);
-            $btn.disabled = true;
-            $btn2.disabled = true;
-            $btn3.disabled = true;
+            e.disabled = true;
             this.renderHp();
-            return breack;
+
+            return;
         }
 
         this.renderHp();
-        cb(count);
+        cb && cb(count);
     }
 
+    attackBot = (count, cb) => {
+            this.hp.current -= count;
+
+            if (this.hp.current <= 0) {
+                this.hp.current = 0;
+
+                const $p = document.createElement('p');
+                $p.innerText = ('Бедный '+this.name + ' проиграл бой!');
+                const $logs = document.querySelector('.logFight');
+                $logs.insertBefore($p, $logs.children[0]);
+                e.disabled = true;
+                this.renderHp();
+
+                return;
+            }
+
+            this.renderHp();
+            cb && cb(count);
+
+    };
 
 }
 

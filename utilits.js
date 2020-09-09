@@ -51,4 +51,6 @@ function countBtn(count, e) {
     }
 
 }
+
+
 export {random, countBtn, generateLog, logFight};

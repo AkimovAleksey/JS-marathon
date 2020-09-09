@@ -20,6 +20,7 @@ class Pokemon extends Selectors {
         };
         this.img = img;
         this.type = type;
+        this.live = true;
         this.attacks = attacks;
 
         this.renderHp();
@@ -41,7 +42,7 @@ class Pokemon extends Selectors {
         this.elProgressbar.style.width = widthProgressbar + '%';
     }
 
-    changeHp = (e, count, cb) => {
+    changeHp = (count, cb) => {
         this.hp.current -= count;
 
         if (this.hp.current <= 0) {
@@ -51,7 +52,7 @@ class Pokemon extends Selectors {
             $p.innerText = ('Бедный '+this.name + ' проиграл бой!');
             const $logs = document.querySelector('.logFight');
             $logs.insertBefore($p, $logs.children[0]);
-            e.disabled = true;
+            this.live = false;
             this.renderHp();
 
             return;
@@ -71,7 +72,6 @@ class Pokemon extends Selectors {
                 $p.innerText = ('Бедный '+this.name + ' проиграл бой!');
                 const $logs = document.querySelector('.logFight');
                 $logs.insertBefore($p, $logs.children[0]);
-                e.disabled = true;
                 this.renderHp();
 
                 return;

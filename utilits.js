@@ -1,4 +1,3 @@
-import {player1, player2} from "./main.js"
 
 const $logs = document.querySelector('.logFight');
 
@@ -8,11 +7,11 @@ function random(min, max) {
 }
 
 
-function logFight(player, count){
+function logFight(player1, player2, count){
     const {name: nameCharacter} = player1;
     const {name: nameEnemy} = player2;
 
-    const log = player === player2 ? generateLog(nameEnemy, nameCharacter, count, player2.hp.current, player2.hp.total) :
+    const log = player1 === player2 ? generateLog(nameEnemy, nameCharacter, count, player2.hp.current, player2.hp.total) :
         generateLog(nameCharacter, nameEnemy, count, player1.hp.current, player1.hp.total);
 
     const $p = document.createElement('p');
@@ -52,4 +51,6 @@ function countBtn(count, e) {
     }
 
 }
+
+
 export {random, countBtn, generateLog, logFight};

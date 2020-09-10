@@ -2,23 +2,29 @@ class Selectors {
     constructor(name) {
         this.elHp = document.getElementById(`health-${name}`);
         this.elProgressbar = document.getElementById(`progressbar-${name}`);
+        this.elImg = document.getElementById(`img-${name}`);
+        this.elName = document.getElementById(`name-${name}`);
     }
 }
 class Pokemon extends Selectors {
-    constructor({ name, hp, type, selectors, attacks = [] }) {
+    constructor({ id, name, hp, type, selectors, img, attacks = [] }) {
         // noinspection JSAnnotator
         super(selectors);
 
+        this.id = id;
         this.name = name;
         this.hp = {
             total: hp,
             current: hp,
 
         };
+        this.img = img;
         this.type = type;
+        this.live = true;
         this.attacks = attacks;
 
         this.renderHp();
+        this.paddingPokemon()
     }
     renderHp = () => {
         this.renderHpLife();
@@ -36,7 +42,7 @@ class Pokemon extends Selectors {
         this.elProgressbar.style.width = widthProgressbar + '%';
     }
 
-    changeHp = (e, count, cb) => {
+    changeHp = (count, cb) => {
         this.hp.current -= count;
 
         if (this.hp.current <= 0) {
@@ -46,7 +52,7 @@ class Pokemon extends Selectors {
             $p.innerText = ('Бедный '+this.name + ' проиграл бой!');
             const $logs = document.querySelector('.logFight');
             $logs.insertBefore($p, $logs.children[0]);
-            e.disabled = true;
+            this.live = false;
             this.renderHp();
 
             return;
@@ -66,7 +72,6 @@ class Pokemon extends Selectors {
                 $p.innerText = ('Бедный '+this.name + ' проиграл бой!');
                 const $logs = document.querySelector('.logFight');
                 $logs.insertBefore($p, $logs.children[0]);
-                e.disabled = true;
                 this.renderHp();
 
                 return;
@@ -76,6 +81,12 @@ class Pokemon extends Selectors {
             cb && cb(count);
 
     };
+
+    paddingPokemon = () => {
+        const {elImg, elName} = this;
+        elImg.src = this.img;
+        elName.innerText = this.name;
+    }
 
 }
 
